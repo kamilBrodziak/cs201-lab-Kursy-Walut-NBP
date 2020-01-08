@@ -70,7 +70,7 @@ Aplikacja nie powinna zwracać wyjątków - obsłuż te, które mogą się pojaw
 
 * Aby pobrać pliki z Internetu prawdopodobnie skorzystasz z klasy [WebClient](https://docs.microsoft.com/pl-pl/dotnet/api/system.net.webclient?view=netstandard-2.1) (lub, bardziej surowej [HttpWebResponse](https://docs.microsoft.com/pl-pl/dotnet/api/system.net.httpwebresponse?view=netstandard-2.1)) - oraz stosownych metod pobierających pliki (być może asynchronicznie).
 * Pliki XML możesz ładować prostszymi metodami:
-  * <https://support.microsoft.com/en-ie/help/307643/how-to-read-xml-data-from-a-url-by-using-visual-c>
-  * <https://docs.microsoft.com/pl-pl/dotnet/api/system.xml.xmldocument?view=netstandard-2.1>
+  * <https://support.microsoft.com/en-us/help/307643/how-to-read-xml-data-from-a-url-by-using-visual-c>
+  * <https://docs.microsoft.com/en-us/dotnet/api/system.xml.xmldocument?view=netstandard-2.1>
   * <https://lonewolfonline.net/introduction-xml/>
-* Parsowanie plików XML możesz zrealizować na wiele różnych sposób:, np. używając [LinqToXML](https://docs.microsoft.com/pl-pl/dotnet/csharp/programming-guide/concepts/linq/linq-to-xml-overview), [XMLDocument](https://docs.microsoft.com/en-us/dotnet/api/system.xml.xmldocument?redirectedfrom=MSDN&view=netframework-4.8), [XPath](https://docs.microsoft.com/en-us/dotnet/api/system.xml.xpath?redirectedfrom=MSDN&view=netframework-4.8) czy via [XML serialisation](https://docs.microsoft.com/en-us/dotnet/standard/serialization/introducing-xml-serialization).
+* Parsowanie plików XML możesz zrealizować na wiele różnych sposobów:, np. używając [LinqToXML](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/linq/linq-to-xml-overview), [XMLDocument](https://docs.microsoft.com/en-us/dotnet/api/system.xml.xmldocument?redirectedfrom=MSDN&view=netframework-4.8), [XPath](https://docs.microsoft.com/en-us/dotnet/api/system.xml.xpath?redirectedfrom=MSDN&view=netframework-4.8) czy via [XML serialisation](https://docs.microsoft.com/en-us/dotnet/standard/serialization/introducing-xml-serialization).

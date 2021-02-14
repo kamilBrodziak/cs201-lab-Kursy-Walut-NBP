@@ -10,15 +10,29 @@ namespace ConsoleApp {
     class Program {
         static void Main(string[] args) {
             Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
-            //var startDateArr = args[1].Split("-").Select(el => int.Parse(el)).ToArray();
-            //var endDateArr = args[2].Split("-").Select(el => int.Parse(el)).ToArray();
-
-            //var startDate = new DateTime(startDateArr[0], startDateArr[1], startDateArr[2]);
-            //var endDate = new DateTime(endDateArr[0], endDateArr[1], endDateArr[2]);
-            //var code = args[0];
+            DateTime ConvertToDate(string s) {
+                var parts = s.Split("-");
+                if(parts.Length != 3) throw new ArgumentException("Incorrect date format");
+                try {
+                    var intParts = parts.Select(el => int.Parse(el)).ToArray();
+                    return new DateTime(intParts[0], intParts[1], intParts[2]);
+                } catch (Exception) {
+                    throw new ArgumentException("Bad date format");
+                }
+            }
+            if(args.Length != 3 || args[0].Length != 3)
+                throw new ArgumentException("Incorrect command.");
+            //var code = args[0].ToUpper();
+            //var startDate = ConvertToDate(args[1]);
+            //var endDate = ConvertToDate(args[2]);
             var startDate = new DateTime(2018, 9, 1);
             var endDate = new DateTime(2018, 9, 20);
-            //var code = args[0];
+            if(startDate > DateTime.Now)
+                throw new ArgumentException("Start date must be in the past.");
+            if(endDate < startDate)
+                throw new ArgumentException("End date must be later than start date.");
+            if(startDate.Year < 2002)
+                throw new ArgumentException("There is no records before 2002.");
             var code = "EUR";
             var currencyInfoTools = new CurrencyInfoTools(
                 CurrencyInfoRetriever.GetCurrencyInfoListFromFiles(code,

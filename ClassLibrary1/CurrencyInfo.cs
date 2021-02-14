@@ -46,8 +46,8 @@ namespace ClassLibrary1 {
             return string.Join(", ", arr.Where(el => el != ""));
         }
 
-        public int CompareTo(CurrencyInfo obj) => this.ExchangeRate > obj.ExchangeRate ? -1 :
-            (this.ExchangeRate < obj.ExchangeRate ? 1 : 0);
+        public int CompareTo(CurrencyInfo obj) => this.ExchangeRate > obj.ExchangeRate ? 1 :
+            (this.ExchangeRate < obj.ExchangeRate ? -1 : 0);
 
         public static double operator -(CurrencyInfo first, CurrencyInfo sec) 
             => Math.Round(first.ExchangeRate - sec.ExchangeRate, 4);
